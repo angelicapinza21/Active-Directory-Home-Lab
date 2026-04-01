@@ -1,0 +1,36 @@
+For this project, I set up a basic Active Directory environment using virtual machines to simulate how a real company network operates. The main goal was to understand how a Domain Controller manages users, authentication, and organization within a network.
+
+I used VirtualBox to create two virtual machines. The first machine was running Windows Server 2019 and was configured as the Domain Controller. The second machine was running Windows 10 and acted as a client computer. Both machines were connected on the same network so they could communicate properly.
+
+On the server, I installed Active Directory Domain Services (AD DS) and promoted the machine to a Domain Controller. During this process, I created a domain called Austinslab.local. Once the domain was set up, I configured the client machine to use the server as its DNS and joined it to the domain. After restarting the client computer, I was able to log in using domain credentials, which confirmed that the connection between the two machines was working correctly.
+
+To make the environment more realistic, I created Organizational Units (OUs) to represent different departments within a company. These included IT, HR, Managers, and Workstations. This helped organize users and systems in a structured way, similar to how companies manage their internal networks.
+
+I then created user accounts to simulate employees. For example, I created a user named John to test domain login and confirm that authentication was working. I also created a user named Sarah to represent an HR employee.
+
+To follow best practices, I created security groups for each department, including HR, IT, and Managers. Instead of assigning permissions directly to users, I added users to these groups. For example, Sarah was added to the HR group. This approach reflects how access is managed in real environments, where permissions are assigned based on roles rather than individual users.
+
+I also tested account management by performing a password reset on a user account and requiring the user to change their password at the next login. When logging in from the client machine, the system correctly prompted for a new password, confirming that the policy was working as expected.
+
+Additionally, I practiced organizing users by moving them between Organizational Units. This demonstrated how administrators can manage users based on department or role, making it easier to apply policies and maintain structure as a company grows.
+
+Throughout the project, I verified that the system was functioning correctly by testing domain logins, confirming communication between machines, and ensuring that user accounts behaved as expected.
+
+This lab helped me understand key Active Directory concepts such as domain setup, authentication, user and group management, and basic administrative tasks. It also gave me a better understanding of how IT administrators manage users and systems in a real-world environment.
+
+One of the challenges I encountered during this project was working with network sharing and permissions. While troubleshooting this, I learned how sensitive configurations like permissions, inheritance, and network settings can affect access. This experience helped me develop problem-solving skills and a better understanding of how systems behave when something is misconfigured.
+
+Overall, this project provided hands-on experience with Active Directory and helped reinforce important concepts that are used in real IT environments. It gave me confidence in setting up and managing a basic domain structure and understanding how users interact within a network.
+
+Key Steps Performed
+
+- Installed Windows Server 2019 and configured it as a Domain Controller  
+- Created a new domain (Austinslab.local)  
+- Installed and configured Active Directory Domain Services (AD DS)  
+- Set up a Windows 10 client machine  
+- Joined the client machine to the domain  
+- Created Organizational Units (IT, HR, Managers, Workstations)  
+- Created users and security groups  
+- Added users to appropriate groups  
+- Reset a user password and enforced password change at login  
+- Verified successful domain login from the client machine
