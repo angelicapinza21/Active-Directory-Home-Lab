@@ -15,9 +15,9 @@ This lab demonstrates the end-to-end deployment of a Windows Server 2019 Domain 
 ## Project Goals & Real-World Application
 In a corporate environment, Active Directory is the primary target for identity-based attacks. This lab demonstrates how to mitigate these risks using industry-standard security practices:
 
-- **The "Default Password" Risk:**
-    * **Action:** I enforced a "Must Change Password at Next Logon" policy for all new accounts.
-    * **Real-World Benefit:** This ensures that "temporary" setup passwords are killed immediately. It prevents hackers from using leaked default credentials to gain initial access to the network.
+- **The "Default/Forgot Password" Risk:**
+    * **Action:** I enforced a "Must Change Password at Next Logon" policy for all new accounts. I Was also able to change the users password from the Domain Controller. 
+    * **Real-World Benefit:** This ensures that "temporary" setup passwords are killed immediately. It prevents hackers from using leaked default credentials to gain initial access to the network. It also allows for passwords to be changed if the user forgets.
 
 - **The "Permission Creep" Risk:**
     * **Action:** I performed a **Group Move/Migration** to place a user into the correct departmental unit.
