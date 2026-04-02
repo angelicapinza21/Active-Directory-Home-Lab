@@ -8,7 +8,7 @@ This lab demonstrates the end-to-end deployment of a Windows Server 2019 Domain 
 - Windows Server 2019
 - Windows 10
 - Active Directory Domain Services (AD DS)
- Translating complex technical workflows into professional, audit-ready reports.\
+ Translating complex technical workflows into professional, audit-ready reports.
 
 ---
 
