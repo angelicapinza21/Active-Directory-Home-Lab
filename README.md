@@ -9,6 +9,24 @@ This lab demonstrates the end-to-end deployment of a Windows Server 2019 Domain 
 - Windows 10
 - Active Directory Domain Services (AD DS)
 
+## Project Goals & Real-World Application
+In a modern corporate, Active Directory is the primary target for identity-based attacks. This lab demonstrates how to mitigate these risks using industry-standard security practices:
+
+- **The "Default Password" Risk:**
+    * **Action:** I enforced a "Must Change Password at Next Logon" policy for all new users.
+    * **Real-World Benefit:** This ensures that "temporary" setup passwords (like *P@ssword1*) are killed immediately. It guarantees that only the employee knows their "keys to the kingdom," preventing hackers from using leaked default credentials.
+
+- **The "Excessive Access" Risk:**
+    * **Action:** I established a strict **Organizational Unit (OU)** hierarchy and assigned users to specific **Security Groups** (HR, IT, Managers).
+    * **Real-World Benefit:** This applies the **Principle of Least Privilege (PoLP)**. If an HR account is compromised, the hacker is "trapped" in the HR folder and cannot jump (move laterally) into the sensitive Finance or IT systems.
+
+- **The "Server Spoofing" Risk:**
+    * **Action:** I manually configured **Static IP addresses** and **DNS Resolver** settings for the Domain Controller and Client.
+    * **Real-World Benefit:** Hardcoding these settings ensures that the workstation always talks to the *real* Server. This prevents "DNS Poisoning" or "Spoofing" attacks where a hacker tries to pretend to be the Server to steal user passwords.
+
+- **The "Hidden Admin" Risk:**
+    * **Action:** I used command-line tools like `whoami` and `net user` to audit active sessions and group memberships.
+
 ---
 
 ## Phase 1: Infrastructure & Domain Deployment
@@ -37,5 +55,12 @@ This lab demonstrates the end-to-end deployment of a Windows Server 2019 Domain 
 | 13 | Identity Validation | ![13](screenshots/13-identity-validation.png) |
 | 14 | Password Reset Policy | ![14](screenshots/14-password-reset.png) |
 
+---
+
+## Skills Acquired
+- **Enterprise Infrastructure:** Deploying and hardening Windows Server 2019 and AD DS roles.
+- **Network Engineering:** Designing stable DNS/IP architecture for corporate environments.
+- **IAM (Identity & Access Management):** Provisioning users, managing security groups, and enforcing GPO-style logic.
+- **Technical Documentation:** Translating complex technical workflows into professional, audit-ready reports.
 ---
 *For a full technical breakdown and configuration logs, see [notes/lab-notes.txt](notes/lab-notes.txt).*
